@@ -1,8 +1,16 @@
-print("# John Lennon")
-print("or ***John Winston Ono Lennon*** was one of *The Beatles*.")
-print("Here are the songs he wrote I like the most:")
-print("* Imagine")
-print("* Norwegian Wood")
-print("* Come Together")
-print("* In My Life")
-print("* ~~Hey Jude~~ (that was *McCartney*)")
+def markdown_formatter():
+    formatter_options = ["plain", "bold", "italic", "link", "inline-code", "header", "ordered-list", "unordered-list", "line-break"]
+    formatter = input("- Choose a formatter: ")
+
+    while formatter != "!done":
+        if formatter == "!help":
+            print(f"Available formatters: {' '.join(formatter_options)}")
+            print("Special commands: !help !done")
+
+        elif formatter not in formatter_options:
+            print("Unknown formatting type or command. Please try again")
+
+        formatter = input("- Choose a formatter: ")
+
+
+markdown_formatter()

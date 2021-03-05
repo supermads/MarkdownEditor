@@ -120,5 +120,9 @@ files:
         Test().run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/162/stages/840/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/162/stages/840/implement">JetBrains
+    Academy</a>
+  time: Fri, 05 Mar 2021 03:30:44 UTC
 record: -1
