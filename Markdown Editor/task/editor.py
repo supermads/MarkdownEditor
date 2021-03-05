@@ -36,15 +36,36 @@ def format_new_line():
     return "\n"
 
 
+def format_list(list_type):
+    formatted_list = ""
+    num_rows = int(input("- Number of rows: "))
+
+    while num_rows <= 0:
+        print("The number of rows should be greater than zero")
+        num_rows = int(input("- Number of rows: "))
+
+    for i in range(1, num_rows + 1):
+        row_text = input(f"- Row #{i}: ")
+        if list_type == "ordered":
+            formatted_list += f"{i}. {row_text}\n"
+        else:
+            formatted_list += f"* {row_text}\n"
+
+    return formatted_list
+
+
 def markdown_formatter():
-    # Ordered and unordered lists not added yet
-    formatter_funcs = {"plain": format_plain,
-                       "bold": format_bold,
-                       "italic": format_italic,
-                       "link": format_link,
-                       "inline-code": format_inline,
-                       "header":format_header,
-                       "new-line": format_new_line}
+    formatter_funcs = {
+        "plain": format_plain,
+        "bold": format_bold,
+        "italic": format_italic,
+        "link": format_link,
+        "inline-code": format_inline,
+        "header": format_header,
+        "new-line": format_new_line,
+        "ordered-list": format_list,
+        "unordered-list": format_list
+    }
     formatter = input("- Choose a formatter: ")
     markdown_string = ""
 
@@ -55,6 +76,12 @@ def markdown_formatter():
 
         elif formatter not in formatter_funcs:
             print("Unknown formatter or command. Please try again.")
+
+        elif "list" in formatter:
+            if formatter[0] == "o":
+                markdown_string += format_list("ordered")
+            else:
+                markdown_string += format_list("unordered")
 
         else:
             markdown_string += formatter_funcs[formatter]()
