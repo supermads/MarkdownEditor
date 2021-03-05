@@ -90,5 +90,8 @@ def markdown_formatter():
 
         formatter = input("- Choose a formatter: ")
 
+    with open("output.md", "w") as f:
+        f.write(markdown_string)
+
 
 markdown_formatter()

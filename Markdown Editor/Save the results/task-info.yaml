@@ -259,6 +259,13 @@ files:
     if __name__ == '__main__':
         Test().run_tests()
   learner_created: false
+- name: output.md
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/162/stages/843/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/162/stages/843/implement">JetBrains
+    Academy</a>
+  time: Fri, 05 Mar 2021 18:02:57 UTC
 record: -1
